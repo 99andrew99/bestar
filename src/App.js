@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import SignIn from "./components/SignIn";
+import Home from "./components/Home";
+import { useContext, useState } from "react";
+
+// import { AuthContext } from "./context/AuthContext";
+
+const TopContainer = styled.div``;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    // const { isLoggedIn } = useContext(AuthContext);
+
+    return (
+        <TopContainer>
+            <BrowserRouter>
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            isLoggedIn ? (
+                                <Navigate to="/home" />
+                            ) : (
+                                <Navigate to="/signin" />
+                            )
+                        }
+                    />
+
+                    <Route path={"/signin"} element={<SignIn />} />
+                    <Route path="/home" element={<Home />} />
+                </Routes>
+            </BrowserRouter>
+        </TopContainer>
+    );
 }
 
 export default App;
