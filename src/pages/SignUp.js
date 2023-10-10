@@ -89,6 +89,7 @@ const IdInput = styled.input`
     height: 40px;
     border-radius: 3px;
     border: 1px solid gray;
+    text-indent: 10px;
 `;
 
 const Pw = styled.div`
@@ -108,6 +109,8 @@ const PwInput = styled.input`
     height: 40px;
     border-radius: 3px;
     border: 1px solid gray;
+    text-indent: 10px;
+    text-indent: 10px;
 `;
 
 const Email = styled.div`
@@ -127,6 +130,7 @@ const EmailInput = styled.input`
     height: 40px;
     border-radius: 3px;
     border: 1px solid gray;
+    text-indent: 10px;
 `;
 
 const NickName = styled.div`
@@ -146,6 +150,7 @@ const NickNameInput = styled.input`
     height: 40px;
     border-radius: 3px;
     border: 1px solid gray;
+    text-indent: 10px;
 `;
 
 const SignUpBtn = styled.div`

@@ -1,5 +1,14 @@
+import styled from "styled-components";
+import Header from "../components/Header";
+
+const TopContainer = styled.div``;
+
 function Home() {
-    return <div>홈페이지</div>;
+    return (
+        <TopContainer>
+            <Header />
+        </TopContainer>
+    );
 }
 
 export default Home;
