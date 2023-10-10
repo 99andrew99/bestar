@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const TopContainer = styled.div`
     width: 650px;
@@ -85,8 +86,8 @@ const Id = styled.div`
 `;
 const IdInput = styled.input`
     width: 100%;
-    height: 30px;
-    border-radius: 10px;
+    height: 40px;
+    border-radius: 3px;
     border: 1px solid gray;
 `;
 
@@ -104,8 +105,8 @@ const Pw = styled.div`
 `;
 const PwInput = styled.input`
     width: 100%;
-    height: 30px;
-    border-radius: 10px;
+    height: 40px;
+    border-radius: 3px;
     border: 1px solid gray;
 `;
 
@@ -160,7 +161,13 @@ function SignIn() {
     return (
         <TopContainer>
             <TitleContainer>
-                <img src="img/bestarLogo.png" />
+                <Link to="/home">
+                    <img
+                        src="img/bestarLogo.png"
+                        style={{ cursor: "pointer" }}
+                    />
+                </Link>
+
                 <p>비스타에 오신것을 환영합니다.</p>
             </TitleContainer>
 
@@ -192,7 +199,9 @@ function SignIn() {
 
                 <SignUp>
                     <p>아직 비스타의 회원이 아니신가요?</p>
-                    <SignUpBtn>회원가입</SignUpBtn>
+                    <SignUpBtn>
+                        <Link to="/signup">회원가입</Link>
+                    </SignUpBtn>
                 </SignUp>
             </Login>
         </TopContainer>
